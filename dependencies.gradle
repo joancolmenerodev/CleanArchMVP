@@ -1,0 +1,75 @@
+ext {
+
+    //Android
+    minSdkVersion = 19
+    targetSdkVersion = 28
+    compileSdkVersion = 28
+    testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
+
+    androidSupportLibVersion = '1.1.0'
+
+    buildToolsVersion = '28.0.3'
+    constraintLayoutVersion = '1.1.3'
+    sdpVersion = '1.0.6'
+    jUnitVersion = '4.12'
+    okHttpVersion = '4.2.1'
+    testRunnerVersion = '1.0.2'
+    appCompatLibraryVersion = '1.1.0'
+    materialDesignVersion = '1.0.0'
+    cardViewVersion = '1.0.0'
+    coroutinesCoreVersion = '1.3.2'
+    supportLibraryVersion = '28.0.0'
+    espressoCoreVersion = '3.2.0'
+    retrofitVersion = '2.6.0'
+    gsonVersion = '2.8.5'
+    testRunnerVersion = '1.2.0'
+    testRulesVersion = '1.0.2'
+    glideVersion = '4.9.0'
+    kodeinVersion = '6.2.1'
+    kodeinCoreVersion = '6.2.1'
+    lottieVersion = '2.8.0'
+    mockitoCoreVersion = '2.22.0'
+    mockitoInlineVersion = '2.22.0'
+
+    //Kotlin and support
+    kotlinVersion = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    appCompatLibrary =  "androidx.appcompat:appcompat:$appCompatLibraryVersion"
+    materialDesign = "com.google.android.material:material:$materialDesignVersion"
+    constraintLayout =  "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
+    supportDesign =  'com.android.support:design:28.0.0'
+    cardView =  "androidx.cardview:cardview:$cardViewVersion"
+
+    //Retrofit
+    retrofit = "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    retrofitGsonConverter = "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+
+    //OkHttp
+    retrofitLoggingInterceptors= "com.squareup.okhttp3:logging-interceptor:$okHttpVersion"
+
+
+    //Coroutines
+    coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesCoreVersion"
+
+
+    //Gson
+    gson = "com.google.code.gson:gson:$gsonVersion"
+
+    //Glide
+    glide = "com.github.bumptech.glide:glide:$glideVersion"
+
+
+    //Kodein
+    kodeinGeneric = "org.kodein.di:kodein-di-generic-jvm:$kodeinVersion"
+    kodeinAndroidSupport = "org.kodein.di:kodein-di-framework-android-support:$kodeinCoreVersion"
+
+    //Lottie
+    lottie = "com.airbnb.android:lottie:$lottieVersion"
+
+
+    //Testing
+    jUnit =  "junit:junit:$jUnitVersion"
+    mockitoCore =  "org.mockito:mockito-core:$mockitoCoreVersion"
+    testRunner =  "androidx.test:runner:$testRunnerVersion"
+    espressoCore =  "androidx.test.espresso:espresso-core:$espressoCoreVersion"
+}
+

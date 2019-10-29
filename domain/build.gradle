@@ -1,8 +1,22 @@
 apply plugin: 'java-library'
-
-dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-}
+apply plugin: 'kotlin'
 
 sourceCompatibility = "7"
 targetCompatibility = "7"
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    implementation rootProject.ext.coroutines
+    testImplementation rootProject.ext.jUnit
+    testImplementation rootProject.ext.mockitoCore
+
+}
+
+repositories{
+    mavenCentral()
+}
+sourceSets {
+    main.java.srcDirs += 'src/main/kotlin'
+}

@@ -7,14 +7,14 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion rootProject.ext.compileSdkVersion
     defaultConfig {
         applicationId "com.joancolmenerodev.cleanarch"
-        minSdkVersion 16
-        targetSdkVersion 28
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
@@ -26,46 +26,33 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    //Kotlin and support
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation "androidx.appcompat:appcompat:$appCompatLibraryVersion"
-    implementation "com.google.android.material:material:$materialDesignVersion"
-    implementation "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
-    implementation 'com.android.support:design:28.0.0'
-    implementation "androidx.cardview:cardview:$cardViewVersion"
+    implementation rootProject.ext.appCompatLibrary
+    implementation rootProject.ext.supportDesign
+    implementation rootProject.ext.constraintLayout
+    implementation rootProject.ext.cardView
+    implementation rootProject.ext.materialDesign
 
-    //Retrofit
-    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
-    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    implementation rootProject.ext.retrofit
+    implementation rootProject.ext.retrofitGsonConverter
+    implementation rootProject.ext.retrofitLoggingInterceptors
+    implementation rootProject.ext.gson
 
-    //OkHttp
-    implementation "com.squareup.okhttp3:logging-interceptor:$okHttpVersion"
+    implementation rootProject.ext.coroutines
 
+    implementation rootProject.ext.glide
+    kapt "com.github.bumptech.glide:compiler:4.9.0"
 
-    //Coroutines
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesCoreVersion"
+    implementation rootProject.ext.kodeinGeneric
+    implementation rootProject.ext.kodeinAndroidSupport
 
+    implementation rootProject.ext.lottie
 
-    //Gson
-    implementation "com.google.code.gson:gson:$gsonVersion"
+    testImplementation rootProject.ext.jUnit
+    testImplementation rootProject.ext.mockitoCore
+    androidTestImplementation rootProject.ext.testRunner
+    androidTestImplementation rootProject.ext.espressoCore
 
-    //Glide
-    implementation "com.github.bumptech.glide:glide:$glideVersion"
-    kapt "com.github.bumptech.glide:compiler:$glideVersion"
-
-    //Kodein
-    implementation "org.kodein.di:kodein-di-generic-jvm:$kodeinVersion"
-    implementation "org.kodein.di:kodein-di-framework-android-support:$kodeinCoreVersion"
-
-    //Lottie
-    implementation "com.airbnb.android:lottie:$lottieVersion"
-
-    //Sdp
-    implementation "com.intuit.sdp:sdp-android:$sdpVersion"
-
-    //Testing
-    testImplementation "junit:junit:$jUnitVersion"
-    testImplementation "org.mockito:mockito-core:$mockitoCoreVersion"
-    androidTestImplementation "androidx.test:runner:$testRunnerVersion"
-    androidTestImplementation "androidx.test.espresso:espresso-core:$espressoCoreVersion"
+    implementation project(':data')
+    implementation project(':domain')
 }

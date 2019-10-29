@@ -1,9 +1,12 @@
 package com.joancolmenerodev.base.networking
 
+import okhttp3.Interceptor
+import okhttp3.Response
+
 class HeadersInterceptor : Interceptor {
 
     override fun intercept(chain: Interceptor.Chain): Response = with(chain.request().newBuilder()) {
-        addHeader(com.joancolmenerodev.feature.base.networking.HeadersInterceptor.Companion.HEADER_KEY, com.joancolmenerodev.feature.base.networking.HeadersInterceptor.Companion.API_KEY)
+        addHeader(HEADER_KEY, API_KEY)
         chain.proceed(this.build())
     }
 
