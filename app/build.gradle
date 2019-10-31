@@ -7,14 +7,14 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion rootProject.ext.compileSdkVersion
+    compileSdkVersion Android.compileSdkVersion
     defaultConfig {
-        applicationId "com.joancolmenerodev.cleanarch"
-        minSdkVersion rootProject.ext.minSdkVersion
-        targetSdkVersion rootProject.ext.targetSdkVersion
+        applicationId Android.applicationId
+        minSdkVersion Android.minSdkVersion
+        targetSdkVersion Android.targetSdkVersion
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner Android.testInstrumentationRunner
     }
     buildTypes {
         release {
@@ -26,32 +26,31 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation rootProject.ext.appCompatLibrary
-    implementation rootProject.ext.supportDesign
-    implementation rootProject.ext.constraintLayout
-    implementation rootProject.ext.cardView
-    implementation rootProject.ext.materialDesign
+    implementation Kotlin.kotlinStdlib
+    implementation SupportLibraries.appcompat
+    implementation SupportLibraries.design
+    implementation SupportLibraries.constraintLayout
+    implementation SupportLibraries.cardview
 
-    implementation rootProject.ext.retrofit
-    implementation rootProject.ext.retrofitGsonConverter
-    implementation rootProject.ext.retrofitLoggingInterceptors
-    implementation rootProject.ext.gson
+    implementation Libraries.retrofit
+    implementation Libraries.retrofitGsonConverter
+    implementation Libraries.retrofitLoggingInterceptors
+    implementation Libraries.gson
 
-    implementation rootProject.ext.coroutines
+    implementation Libraries.coroutines
 
-    implementation rootProject.ext.glide
+    implementation Libraries.glide
     kapt "com.github.bumptech.glide:compiler:4.9.0"
 
-    implementation rootProject.ext.kodeinGeneric
-    implementation rootProject.ext.kodeinAndroidSupport
+    implementation Libraries.kodeinGeneric
+    implementation Libraries.kodeinAndroidSupport
 
-    implementation rootProject.ext.lottie
+    implementation Libraries.lottie
 
-    testImplementation rootProject.ext.jUnit
-    testImplementation rootProject.ext.mockitoCore
-    androidTestImplementation rootProject.ext.testRunner
-    androidTestImplementation rootProject.ext.espressoCore
+    testImplementation TestLibraries.jUnit
+    testImplementation TestLibraries.mockitoCore
+    androidTestImplementation TestLibraries.testRunner
+    androidTestImplementation TestLibraries.espressoCore
 
     implementation project(':data')
     implementation project(':domain')

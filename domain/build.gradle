@@ -6,11 +6,11 @@ targetCompatibility = "7"
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation Kotlin.kotlinStdlib
 
-    implementation rootProject.ext.coroutines
-    testImplementation rootProject.ext.jUnit
-    testImplementation rootProject.ext.mockitoCore
+    implementation Libraries.coroutines
+    testImplementation TestLibraries.jUnit
+    testImplementation TestLibraries.mockitoCore
 
 }
 
