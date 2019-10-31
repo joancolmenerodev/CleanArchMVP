@@ -47,6 +47,6 @@ dependencies {
     testImplementation TestLibraries.mockitoCore
     androidTestImplementation TestLibraries.testRunner
 
-    implementation project(':domain')
+    implementation project(Modules.domain)
 }
 

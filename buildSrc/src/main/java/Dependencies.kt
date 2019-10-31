@@ -10,6 +10,12 @@ object Kotlin {
     const val kotlinStdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.kotlinVersion}"
 }
 
+object Modules {
+    const val data = ":data"
+    const val domain = ":domain"
+    const val app = ":app"
+}
+
 object TestLibraries {
     const val jUnit = "junit:junit:${Versions.jUnitVersion}"
     const val mockitoCore = "org.mockito:mockito-core:${Versions.mockitoCoreVersion}"

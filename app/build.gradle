@@ -52,6 +52,6 @@ dependencies {
     androidTestImplementation TestLibraries.testRunner
     androidTestImplementation TestLibraries.espressoCore
 
-    implementation project(':data')
-    implementation project(':domain')
+    implementation project(Modules.data)
+    implementation project(Modules.domain)
 }
