@@ -41,6 +41,7 @@ dependencies {
     implementation rootProject.ext.coroutines
 
     implementation rootProject.ext.glide
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     kapt "com.github.bumptech.glide:compiler:4.9.0"
 
     implementation rootProject.ext.kodeinGeneric

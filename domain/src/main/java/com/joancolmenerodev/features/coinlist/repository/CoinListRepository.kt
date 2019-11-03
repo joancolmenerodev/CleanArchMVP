@@ -1,8 +1,9 @@
 package com.joancolmenerodev.features.coinlist.repository
 
-import com.joancolmenerodev.model.CryptoResponse
+import com.joancolmenerodev.ResultWrapper
+
 
 interface CoinListRepository {
 
-    suspend fun getCoinList(): CryptoResponse
+    suspend fun getCoinList(): ResultWrapper<List<CoinList>>
 }

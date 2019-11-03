@@ -1,7 +1,5 @@
 package com.joancolmenerodev.entities
 
-import com.joancolmenerodev.model.Urls
-
 data class CryptoDetail (
     val category: String,
     val date_added: String,

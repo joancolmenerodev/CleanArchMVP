@@ -1,8 +1,9 @@
 package com.joancolmenerodev.features.coindetail.repository
 
-import com.joancolmenerodev.model.CryptoDetailResponse
+import com.joancolmenerodev.ResultWrapper
 
 interface CoinDetailRepository {
 
-    suspend fun getCoinDetail(cryptoId: Int): CryptoDetailResponse
+    suspend fun getCoinDetail(cryptoId: Int): ResultWrapper<CoinDetail>
+
 }
