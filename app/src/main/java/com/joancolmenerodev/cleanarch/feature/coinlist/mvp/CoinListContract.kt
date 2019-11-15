@@ -2,7 +2,7 @@ package com.joancolmenerodev.cleanarch.feature.coinlist.mvp
 
 import com.joancolmenerodev.cleanarch.base.BasePresenter
 import com.joancolmenerodev.cleanarch.base.PresenterView
-import com.joancolmenerodev.feature.coinlist.mapper.CoinList
+import com.joancolmenerodev.features.coinlist.models.CoinList
 
 interface CoinListContract {
     interface View : PresenterView {

@@ -1,8 +1,8 @@
 package com.joancolmenerodev.feature.coindetail.repository
 
 import com.joancolmenerodev.ResultWrapper
-import com.joancolmenerodev.feature.coindetail.mapper.CoinDetail
 import com.joancolmenerodev.feature.coindetail.mapper.map
+import com.joancolmenerodev.features.coindetail.models.CoinDetail
 import com.joancolmenerodev.features.coindetail.repository.CoinDetailRepository
 import com.joancolmenerodev.service.CryptoCurrencyApi
 

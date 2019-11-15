@@ -1,15 +1,16 @@
 package com.joancolmenerodev.cleanarch.feature.coinlist
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v7.widget.GridLayoutManager
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.GridLayoutManager
 import com.joancolmenerodev.cleanarch.R
+import com.joancolmenerodev.cleanarch.extensions.view.setVisibile
 import com.joancolmenerodev.cleanarch.feature.coindetail.CoinDetailActivity
 import com.joancolmenerodev.cleanarch.feature.coinlist.mvp.CoinListContract
 import com.joancolmenerodev.cleanarch.feature.coinlist.ui.CoinListAdapter
-import com.joancolmenerodev.feature.coinlist.mapper.CoinList
+import com.joancolmenerodev.features.coinlist.models.CoinList
 import kotlinx.android.synthetic.main.activity_main.*
 import org.kodein.di.KodeinAware
 import org.kodein.di.android.kodein
@@ -65,11 +66,7 @@ class MainActivity : AppCompatActivity(), KodeinAware, CoinListContract.View {
     }
 
     override fun showProgressBar(isVisible: Boolean) {
-        progressbar_list.visibility = if (isVisible) {
-            View.VISIBLE
-        } else {
-            View.GONE
-        }
+        progressbar_list.setVisibile(isVisible)
     }
 
     override fun navigateToCoinDetail(cryptoId: Int) {

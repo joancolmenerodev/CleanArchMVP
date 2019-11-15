@@ -5,6 +5,7 @@ abstract class AbstractRetrofitApi {
         try {
             ResultWrapper.Success(requestFunc.invoke())
         } catch (exception: Exception) {
+            //Add different exceptions to better catch them
             ResultWrapper.Failure(exception)
         }
 }

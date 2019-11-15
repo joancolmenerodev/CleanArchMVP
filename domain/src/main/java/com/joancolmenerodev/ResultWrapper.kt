@@ -5,8 +5,7 @@ sealed class ResultWrapper<out T> {
     data class Failure<out T : Any>(val failure: Throwable) : ResultWrapper<T>()
 
     fun <T : Any> just(t: T): ResultWrapper<T> = Success(t)
-    fun <T : Any> raise(t: Throwable): ResultWrapper<Throwable> =
-        Failure(t)
+    fun <T : Any> raise(t: Throwable): ResultWrapper<Throwable> = Failure(t)
 
     inline fun <B> fold(ifFailure: (Throwable) -> B, ifSuccess: (T) -> B): B =
         when (this) {

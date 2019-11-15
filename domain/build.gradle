@@ -8,6 +8,9 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation Kotlin.kotlinStdlib
 
+    implementation Libraries.kodeinGeneric
+    implementation Libraries.kodeinAndroidSupport
+
     implementation Libraries.coroutines
     testImplementation TestLibraries.jUnit
     testImplementation TestLibraries.mockitoCore

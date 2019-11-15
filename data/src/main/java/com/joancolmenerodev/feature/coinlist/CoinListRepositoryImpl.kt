@@ -1,8 +1,8 @@
 package com.joancolmenerodev.feature.coinlist
 
 import com.joancolmenerodev.ResultWrapper
-import com.joancolmenerodev.feature.coinlist.mapper.CoinList
 import com.joancolmenerodev.feature.coinlist.mapper.map
+import com.joancolmenerodev.features.coinlist.models.CoinList
 import com.joancolmenerodev.features.coinlist.repository.CoinListRepository
 import com.joancolmenerodev.service.CryptoCurrencyApi
 
@@ -14,7 +14,4 @@ open class CoinListRepositoryImpl(private val api: CryptoCurrencyApi) : CoinList
         }, {
             ResultWrapper.Success(it.map())
         })
-    }
-
-
 }

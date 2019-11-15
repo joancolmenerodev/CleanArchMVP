@@ -1,4 +1,4 @@
-package com.joancolmenerodev.feature.coinlist.mapper
+package com.joancolmenerodev.features.coinlist.models
 
 data class CoinList(val id: Int,
                     val name: String,

@@ -3,7 +3,7 @@ package com.joancolmenerodev.cleanarch.feature.coindetail
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.joancolmenerodev.cleanarch.R
 
 class CoinDetailActivity : AppCompatActivity() {

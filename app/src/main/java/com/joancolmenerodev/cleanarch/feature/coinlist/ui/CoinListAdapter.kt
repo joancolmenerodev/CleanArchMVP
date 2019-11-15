@@ -1,13 +1,13 @@
 package com.joancolmenerodev.cleanarch.feature.coinlist.ui
 
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
 import com.joancolmenerodev.cleanarch.R
-import com.joancolmenerodev.feature.coinlist.mapper.CoinList
+import com.joancolmenerodev.features.coinlist.models.CoinList
 
 class CoinListAdapter(private val cryptoList: List<CoinList>) :
     RecyclerView.Adapter<CoinListViewHolder>() {

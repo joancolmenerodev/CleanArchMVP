@@ -1,4 +1,4 @@
-package com.joancolmenerodev.feature.coindetail.mapper
+package com.joancolmenerodev.features.coindetail.models
 
 data class CoinDetail(
     val logo: String,

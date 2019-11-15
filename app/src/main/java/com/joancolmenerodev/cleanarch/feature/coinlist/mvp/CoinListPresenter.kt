@@ -24,6 +24,6 @@ class CoinListPresenter(private val getCoinListUseCase: GetCoinListUseCase) :
     }
 
     override fun onCoinClicked(cryptoId: Int) {
-        view?.navigateToCoinDetail(cryptoId=cryptoId)
+        view?.navigateToCoinDetail(cryptoId = cryptoId)
     }
 }
