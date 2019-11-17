@@ -7,9 +7,10 @@ import org.kodein.di.generic.bind
 import org.kodein.di.generic.instance
 import org.kodein.di.generic.singleton
 
+
 object DomainInject {
 
-    fun modules() = listOf<Kodein.Module>(repositoryModule)
+    fun modules() = listOf(repositoryModule)
 
     private val repositoryModule = Kodein.Module("usecaseModule") {
         bind<GetCoinListUseCase>() with singleton { GetCoinListUseCase(instance()) }

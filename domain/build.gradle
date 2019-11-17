@@ -11,6 +11,7 @@ dependencies {
     implementation Libraries.kodeinGeneric
     implementation Libraries.kodeinAndroidSupport
 
+
     implementation Libraries.coroutines
     testImplementation TestLibraries.jUnit
     testImplementation TestLibraries.mockitoCore

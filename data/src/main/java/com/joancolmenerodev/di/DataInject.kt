@@ -4,6 +4,8 @@ import com.joancolmenerodev.feature.coindetail.repository.CoinDetailRepositoryIm
 import com.joancolmenerodev.feature.coinlist.CoinListRepositoryImpl
 import com.joancolmenerodev.features.coindetail.repository.CoinDetailRepository
 import com.joancolmenerodev.features.coinlist.repository.CoinListRepository
+import com.joancolmenerodev.service.CryptoCurrencyApi
+import com.joancolmenerodev.service.CryptoRetrofitApi
 import org.kodein.di.Kodein
 import org.kodein.di.generic.bind
 import org.kodein.di.generic.instance
@@ -16,6 +18,7 @@ object DataInject {
     private val repositoryModule = Kodein.Module("repositoryModule") {
         bind<CoinDetailRepository>() with singleton { CoinDetailRepositoryImpl(instance()) }
         bind<CoinListRepository>() with singleton { CoinListRepositoryImpl(instance()) }
+        bind<CryptoCurrencyApi>() with singleton { CryptoRetrofitApi(instance()) }
     }
 
 }

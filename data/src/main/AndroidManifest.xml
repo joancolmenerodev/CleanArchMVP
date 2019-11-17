@@ -1,2 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.joancolmenerodev.data"/>
+          package="com.joancolmenerodev.data">
+    <application
+            android:allowBackup="false"
+            android:supportsRtl="true">
+
+    </application>
+</manifest>

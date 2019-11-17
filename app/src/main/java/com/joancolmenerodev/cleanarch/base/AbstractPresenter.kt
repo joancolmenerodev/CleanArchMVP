@@ -12,7 +12,7 @@ import kotlin.coroutines.CoroutineContext
 //    BasePresenter<T>, CoroutineScope {
 abstract class AbstractPresenter<T : PresenterView>(private val uiContext: CoroutineContext = Dispatchers.Main) :
     BasePresenter<T>, CoroutineScope {
-    private lateinit var job: Job
+    private var job = Job()
     var view: T? = null
 
     override val coroutineContext: CoroutineContext
