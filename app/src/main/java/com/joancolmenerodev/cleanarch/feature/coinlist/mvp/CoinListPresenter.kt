@@ -11,15 +11,17 @@ class CoinListPresenter(private val getCoinListUseCase: GetCoinListUseCase) :
     override fun loadResults() {
         //this will run in Main by default (unless is for testing purposes)
         launch {
+            view?.showProgressBar(isVisible = true)
             //Change thread to IO to make the api call
             withContext(Dispatchers.IO) {
                 getCoinListUseCase.execute()
             }.fold({
+                view?.showProgressBar(isVisible = false)
                 view?.showError("Something here")
             }, {
+                view?.showProgressBar(isVisible = false)
                 view?.showResults(it)
             })
-
         }
     }
 

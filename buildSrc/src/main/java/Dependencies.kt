@@ -26,6 +26,7 @@ object TestLibraries {
 object Libraries {
     const val lottie = "com.airbnb.android:lottie:${Versions.lottieVersion}"
     const val glide = "com.github.bumptech.glide:glide:${Versions.glideVersion}"
+    const val glideCompiler = "com.github.bumptech.glide:compiler:${Versions.glideVersion}"
 
 
     const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofitVersion}"

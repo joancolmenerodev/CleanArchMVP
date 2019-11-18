@@ -32,20 +32,13 @@ dependencies {
     implementation SupportLibraries.constraintLayout
     implementation SupportLibraries.cardview
 
-    implementation Libraries.retrofit
-    implementation Libraries.retrofitGsonConverter
-    implementation Libraries.retrofitLoggingInterceptors
-    implementation Libraries.gson
-
     implementation Libraries.coroutines
 
     implementation Libraries.glide
-    kapt "com.github.bumptech.glide:compiler:4.9.0"
+    kapt Libraries.glideCompiler
 
     implementation Libraries.kodeinGeneric
     implementation Libraries.kodeinAndroidSupport
-
-    implementation Libraries.lottie
 
     testImplementation TestLibraries.jUnit
     testImplementation TestLibraries.mockitoCore
