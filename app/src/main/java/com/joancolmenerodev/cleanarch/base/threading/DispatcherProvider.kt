@@ -1,9 +1,7 @@
 package com.joancolmenerodev.cleanarch.base.threading
 
-import com.joancolmenerodev.cleanarch.base.CoroutineContextProvider
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
-import kotlin.coroutines.CoroutineContext
 
 interface DispatcherProvider {
 

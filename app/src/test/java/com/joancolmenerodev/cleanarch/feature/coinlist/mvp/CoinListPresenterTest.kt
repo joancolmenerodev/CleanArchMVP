@@ -8,7 +8,6 @@ import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
 import com.nhaarman.mockitokotlin2.whenever
 import kotlinx.coroutines.runBlocking
-import kotlinx.coroutines.test.runBlockingTest
 import org.junit.Before
 import org.junit.Test
 
@@ -42,7 +41,6 @@ class CoinListPresenterTest {
         //Assert
         verify(view).showProgressBar(true)
         verify(view).showResults(coinList)
-
     }
 
     @Test

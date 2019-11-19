@@ -13,7 +13,7 @@ class CoinDetailPresenter(
     private val getCoinDetailUseCase: GetCoinDetailUseCase,
     private val uiContextProvider: DispatcherProvider = DefaultDisparcherProvider()
 ) :
-    AbstractPresenter<CoinDetailContract.View>(), CoinDetailContract.Presenter {
+    AbstractPresenter<CoinDetailContract.View>(uiContextProvider), CoinDetailContract.Presenter {
     override fun loadData(cryptoId: Int?) {
         view?.showProgressBar(isVisible = true)
         perform {

@@ -2,7 +2,7 @@ package com.joancolmenerodev
 
 sealed class ResultWrapper<out T> {
     data class Success<out T : Any>(val value: T) : ResultWrapper<T>()
-    data class Failure<out T : Any>(val failure: Throwable) : ResultWrapper<T>()
+    data class Failure(val failure: Throwable) : ResultWrapper<Nothing>()
 
     inline fun <B> fold(ifFailure: (Throwable) -> B, ifSuccess: (T) -> B): B =
         when (this) {
@@ -15,3 +15,7 @@ sealed class ResultWrapper<out T> {
         fun <T : Any> raise(t: Throwable): ResultWrapper<Throwable> = Failure(t)
     }
 }
+inline fun <T> ResultWrapper<T>.getOrDefault(defaultValue: (err: Throwable) -> T): T {
+    return fold(defaultValue, {it})
+}
+fun ResultWrapper<*>.failureOrNull(): Throwable? = (this as? ResultWrapper.Failure)?.failure

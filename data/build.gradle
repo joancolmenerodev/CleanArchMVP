@@ -45,6 +45,10 @@ dependencies {
 
     testImplementation TestLibraries.jUnit
     testImplementation TestLibraries.mockitoCore
+
+    testImplementation TestLibraries.mockitoKotlin
+    testImplementation TestLibraries.coroutinesTest
+
     androidTestImplementation TestLibraries.testRunner
 
     implementation project(Modules.domain)
