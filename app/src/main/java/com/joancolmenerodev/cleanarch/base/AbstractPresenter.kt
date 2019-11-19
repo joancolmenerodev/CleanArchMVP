@@ -1,31 +1,38 @@
 package com.joancolmenerodev.cleanarch.base
 
-import com.joancolmenerodev.cleanarch.base.threading.DefaultDispatcherProvider
-import kotlinx.coroutines.CoroutineDispatcher
+import com.joancolmenerodev.cleanarch.base.threading.DefaultDisparcherProvider
+import com.joancolmenerodev.cleanarch.base.threading.DispatcherProvider
+import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
-import kotlin.coroutines.CoroutineContext
+import kotlinx.coroutines.launch
 
 
 //abstract class AbstractPresenter<T : PresenterView>(private val uiContext: CoroutineContextProvider = CoroutineContextProvider()) :
 //or
 //abstract class AbstractPresenter<T : PresenterView>(private val uiContext: CoroutineContext = Dispatchers.Main) :
 //    BasePresenter<T>, CoroutineScope {
-abstract class AbstractPresenter<T : PresenterView>(private val uiContext: CoroutineContext = Dispatchers.Main) :
-    BasePresenter<T>, CoroutineScope {
-    private var job = Job()
+abstract class AbstractPresenter<T : PresenterView>(private val uiContext: DispatcherProvider = DefaultDisparcherProvider()) :
+    BasePresenter<T> {
+    private val jobs = mutableListOf<Job>()
     var view: T? = null
-
-    override val coroutineContext: CoroutineContext
-        get() = uiContext + job
 
     override fun onViewDestroyed() {
         this.view = null
-        this.job.cancel()
+        jobs.clear()
     }
 
     override fun onViewReady(view: T) {
         this.view = view
     }
+
+    protected fun perform(block: suspend CoroutineScope.(T) -> Unit) = view?.let {
+        jobs.add(
+            CoroutineScope(context = uiContext.main() + CoroutineExceptionHandler { _, error -> throw error }).launch {
+                block(
+                    it
+                )
+            }
+        )
+    } ?: throw NotImplementedError("viewNotAttached")
 }

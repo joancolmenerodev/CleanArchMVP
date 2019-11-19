@@ -10,7 +10,6 @@ import org.kodein.di.Kodein
 import org.kodein.di.generic.bind
 import org.kodein.di.generic.instance
 import org.kodein.di.generic.provider
-import org.kodein.di.generic.singleton
 
 object AppInject {
 
@@ -21,7 +20,9 @@ object AppInject {
     }
 
     private val presenterModules = Kodein.Module("presenterModule") {
-        bind<CoinListContract.Presenter>() with provider { CoinListPresenter(instance()) }
+        bind<CoinListContract.Presenter>() with provider { CoinListPresenter(
+            instance()
+        ) }
         bind<CoinDetailContract.Presenter>() with provider { CoinDetailPresenter(instance()) }
     }
 }

@@ -1,7 +1,9 @@
 package com.joancolmenerodev.cleanarch.base.threading
 
+import com.joancolmenerodev.cleanarch.base.CoroutineContextProvider
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
+import kotlin.coroutines.CoroutineContext
 
 interface DispatcherProvider {
 
@@ -12,4 +14,18 @@ interface DispatcherProvider {
 
 }
 
-class DefaultDispatcherProvider : DispatcherProvider
+class DefaultDisparcherProvider : DispatcherProvider
+
+class TestDispatcherProvider : DispatcherProvider{
+    override fun default(): CoroutineDispatcher {
+        return Dispatchers.Unconfined
+    }
+
+    override fun io(): CoroutineDispatcher {
+        return Dispatchers.Unconfined
+    }
+
+    override fun main(): CoroutineDispatcher {
+        return Dispatchers.Unconfined
+    }
+}

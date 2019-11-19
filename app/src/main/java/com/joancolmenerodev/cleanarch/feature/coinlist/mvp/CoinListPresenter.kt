@@ -1,20 +1,23 @@
 package com.joancolmenerodev.cleanarch.feature.coinlist.mvp
 
 import com.joancolmenerodev.cleanarch.base.AbstractPresenter
+import com.joancolmenerodev.cleanarch.base.threading.DefaultDisparcherProvider
+import com.joancolmenerodev.cleanarch.base.threading.DispatcherProvider
 import com.joancolmenerodev.cleanarch.feature.coinlist.usecase.GetCoinListUseCase
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class CoinListPresenter(private val getCoinListUseCase: GetCoinListUseCase) :
-    AbstractPresenter<CoinListContract.View>(), CoinListContract.Presenter {
+class CoinListPresenter(
+    private val getCoinListUseCase: GetCoinListUseCase,
+    private val uiContextProvider: DispatcherProvider = DefaultDisparcherProvider()
+) :
+    AbstractPresenter<CoinListContract.View>(uiContextProvider), CoinListContract.Presenter {
 
     override fun loadResults() {
         //this will run in Main by default (unless is for testing purposes)
-        launch {
+        perform {
             view?.showProgressBar(isVisible = true)
             //Change thread to IO to make the api call
-            withContext(Dispatchers.IO) {
+            withContext(uiContextProvider.io()) {
                 getCoinListUseCase.execute()
             }.fold({
                 view?.showProgressBar(isVisible = false)
