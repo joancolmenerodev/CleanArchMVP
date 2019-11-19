@@ -8,6 +8,7 @@ import kotlinx.coroutines.withContext
 
 class CoinListPresenter(private val getCoinListUseCase: GetCoinListUseCase) :
     AbstractPresenter<CoinListContract.View>(), CoinListContract.Presenter {
+
     override fun loadResults() {
         //this will run in Main by default (unless is for testing purposes)
         launch {
@@ -17,7 +18,7 @@ class CoinListPresenter(private val getCoinListUseCase: GetCoinListUseCase) :
                 getCoinListUseCase.execute()
             }.fold({
                 view?.showProgressBar(isVisible = false)
-                view?.showError("Something here")
+                view?.showError(it.message)
             }, {
                 view?.showProgressBar(isVisible = false)
                 view?.showResults(it)

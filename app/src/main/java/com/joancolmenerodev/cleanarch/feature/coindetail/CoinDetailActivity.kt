@@ -37,7 +37,7 @@ class CoinDetailActivity : AppCompatActivity(), KodeinAware, CoinDetailContract.
         iv_crypto_logo.loadImage(result.logo,android.R.drawable.stat_notify_error)
     }
 
-    override fun showError(errorMessage: String) {
+    override fun showError(errorMessage: String?) {
         Toast.makeText(this, errorMessage, Toast.LENGTH_SHORT).show()
     }
 

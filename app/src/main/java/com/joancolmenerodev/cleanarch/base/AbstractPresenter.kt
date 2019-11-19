@@ -1,5 +1,7 @@
 package com.joancolmenerodev.cleanarch.base
 
+import com.joancolmenerodev.cleanarch.base.threading.DefaultDispatcherProvider
+import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job

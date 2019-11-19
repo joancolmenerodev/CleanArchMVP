@@ -7,7 +7,7 @@ import com.joancolmenerodev.features.coindetail.models.CoinDetail
 interface CoinDetailContract {
     interface View : PresenterView {
         fun displayData(result: CoinDetail)
-        fun showError(errorMessage: String)
+        fun showError(errorMessage: String?)
         fun showProgressBar(isVisible: Boolean)
     }
 

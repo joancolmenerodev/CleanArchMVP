@@ -7,7 +7,7 @@ import com.joancolmenerodev.features.coinlist.models.CoinList
 interface CoinListContract {
     interface View : PresenterView {
         fun showResults(currencyList: List<CoinList>)
-        fun showError(errorMessage: String)
+        fun showError(errorMessage: String?)
         fun showProgressBar(isVisible: Boolean)
         fun navigateToCoinDetail(cryptoId: Int)
     }

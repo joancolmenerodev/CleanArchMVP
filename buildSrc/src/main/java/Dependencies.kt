@@ -19,8 +19,11 @@ object Modules {
 object TestLibraries {
     const val jUnit = "junit:junit:${Versions.jUnitVersion}"
     const val mockitoCore = "org.mockito:mockito-core:${Versions.mockitoCoreVersion}"
+    const val mockitoKotlin = "com.nhaarman.mockitokotlin2:mockito-kotlin:${Versions.mockitoKotlin2Version}"
     const val testRunner = "androidx.test:runner:${Versions.testRunnerVersion}"
     const val espressoCore = "androidx.test.espresso:espresso-core:${Versions.espressoCoreVersion}"
+    const val coroutinesTest =
+        "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutinesCoreVersion}"
 }
 
 object Libraries {
@@ -79,6 +82,7 @@ object Versions {
     const val lottieVersion = "2.8.0"
     const val mockitoCoreVersion = "2.22.0"
     const val mockitoInlineVersion = "2.22.0"
+    const val mockitoKotlin2Version = "2.2.0"
 }
 
 

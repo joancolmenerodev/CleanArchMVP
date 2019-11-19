@@ -15,7 +15,7 @@ class CoinDetailPresenter(private val getCoinDetailUseCase: GetCoinDetailUseCase
                 getCoinDetailUseCase.execute(cryptoId = cryptoId)
             }.fold({
                 view?.showProgressBar(isVisible = false)
-                view?.showError("Something here")
+                view?.showError(it.message)
             }, {
                 view?.showProgressBar(isVisible = false)
                 view?.displayData(it)
