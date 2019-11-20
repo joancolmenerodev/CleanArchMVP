@@ -5,42 +5,34 @@ jdk:
 
 env:
   global:
-    - ANDROID_API_LEVEL=26
-    - EMULATOR_API_LEVEL=22
-    - ANDROID_BUILD_TOOLS_VERSION=26.0.0
-    - ANDROID_ABI=armeabi-v7a
-    - ANDROID_TAG=google_apis
-    - ANDROID_TARGET=android-$ANDROID_API_LEVEL
-    - ADB_INSTALL_TIMEOUT=20 # minutes (2 minutes by default)
+    - ANDROID_API=28
+    - EMULATOR_API=24
+    - ANDROID_BUILD_TOOLS=28.0.3
 
 android:
   components:
     - tools
+    - android-$EMULATOR_API
     - platform-tools
-    - android-$EMULATOR_API_LEVEL
-    - build-tools-$ANDROID_BUILD_TOOLS_VERSION
-    - android-$ANDROID_API_LEVEL
-    # For Google APIs
-    - addon-google_apis-google-$ANDROID_API_LEVEL
-    # Google Play Services
-    - extra-google-google_play_services
-    # Support library
+    - tools
+    - build-tools-$ANDROID_BUILD_TOOLS
+    - android-$ANDROID_API
     - extra-android-support
-    # Latest artifacts in local repository
-    - extra-google-m2repository
     - extra-android-m2repository
-    # Specify at least one system image
-    - sys-img-armeabi-v7a-android-$EMULATOR_API_LEVEL
+    - extra-google-m2repository
+    - sys-img-armeabi-v7a-android-$EMULATOR_API
+  licenses:
+    - ".+"
 
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
   - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+
 cache:
   directories:
     - $HOME/.gradle/caches/
     - $HOME/.gradle/wrapper/
     - $HOME/.android/build-cache
-    -
 before_script:
   - echo no | android create avd --force -n test -t android-$EMULATOR_API_LEVEL --abi armeabi-v7a
   - emulator -avd test -no-audio -no-window &
@@ -50,6 +42,3 @@ before_script:
 script:
   - ./gradlew build
   - ./gradlew build connectedAndroidTest --stacktrace
-
-after_success:
-  - bash <(curl -s https://codecov.io/bash)
