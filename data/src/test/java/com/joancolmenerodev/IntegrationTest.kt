@@ -18,7 +18,7 @@ abstract class IntegrationTest {
 
     lateinit var mockServer: MockWebServer
     private lateinit var apiService: CryptoCurrencyService
-    lateinit var cryptoRetrofitApi : CryptoRetrofitApi
+    lateinit var cryptoRetrofitApi: CryptoRetrofitApi
 
     @Before
     open fun setUp() {
@@ -49,9 +49,12 @@ abstract class IntegrationTest {
 
 
     private fun getJson(filename: String): String {
-        val uri = this.javaClass.classLoader.getResource("json/${filename}")
-        val file = File(uri.path)
-        return String(file.readBytes())
+        this.javaClass.classLoader?.let {
+            val uri = it.getResource("json/${filename}")
+            val file = File(uri.path)
+            return String(file.readBytes())
+        }
+        throw NullPointerException("ClassLoader is null")
     }
 
     private fun generateFakeApiService() {

@@ -18,6 +18,7 @@ object Modules {
 
 object TestLibraries {
     const val jUnit = "junit:junit:${Versions.jUnitVersion}"
+    const val jUnitExt = "junit:junit:${Versions.jUnitExtVersion}"
     const val mockitoCore = "org.mockito:mockito-core:${Versions.mockitoCoreVersion}"
     const val mockitoKotlin = "com.nhaarman.mockitokotlin2:mockito-kotlin:${Versions.mockitoKotlin2Version}"
     const val testRunner = "androidx.test:runner:${Versions.testRunnerVersion}"
@@ -66,6 +67,7 @@ object Versions {
     const val androidSupportLibVersion = "1.1.0"
     const val constraintLayoutVersion = "1.1.3"
     const val jUnitVersion = "4.12"
+    const val jUnitExtVersion = "1.1.1"
     const val okHttpVersion = "4.2.1"
     const val appCompatLibraryVersion = "1.1.0"
     const val materialDesignVersion = "1.0.0"

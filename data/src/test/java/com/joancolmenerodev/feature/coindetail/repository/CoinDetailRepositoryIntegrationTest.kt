@@ -7,9 +7,9 @@ import com.joancolmenerodev.entities.Status
 import com.joancolmenerodev.entities.Urls
 import com.joancolmenerodev.failureOrNull
 import com.joancolmenerodev.getOrDefault
-import junit.framework.Assert.assertEquals
-import junit.framework.Assert.assertTrue
 import kotlinx.coroutines.runBlocking
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertTrue
 import org.junit.Test
 import java.net.HttpURLConnection
 

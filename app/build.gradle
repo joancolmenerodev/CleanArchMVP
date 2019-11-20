@@ -40,7 +40,7 @@ dependencies {
     implementation Libraries.kodeinGeneric
     implementation Libraries.kodeinAndroidSupport
 
-    testImplementation TestLibraries.jUnit
+    testImplementation TestLibraries.jUnitExt
     testImplementation TestLibraries.mockitoCore
     testImplementation TestLibraries.mockitoKotlin
     testImplementation TestLibraries.coroutinesTest

@@ -5,8 +5,8 @@ import com.joancolmenerodev.entities.CryptoResponse
 import com.joancolmenerodev.entities.Data
 import com.joancolmenerodev.entities.Status
 import com.joancolmenerodev.getOrDefault
-import junit.framework.Assert.assertEquals
-import junit.framework.Assert.assertTrue
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertTrue
 import kotlinx.coroutines.runBlocking
 import org.junit.Test
 import java.net.HttpURLConnection
