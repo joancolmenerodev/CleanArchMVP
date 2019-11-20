@@ -10,12 +10,17 @@ sealed class ResultWrapper<out T> {
             is Success -> ifSuccess(value)
         }
 
+    fun isFailure() = this.failureOrNull() != null
+    fun isSuccess() = this.getOrDefault { null } != null
+
     companion object {
         fun <T : Any> just(t: T): ResultWrapper<T> = Success(t)
         fun <T : Any> raise(t: Throwable): ResultWrapper<Throwable> = Failure(t)
     }
 }
+
 inline fun <T> ResultWrapper<T>.getOrDefault(defaultValue: (err: Throwable) -> T): T {
-    return fold(defaultValue, {it})
+    return fold(defaultValue, { it })
 }
+
 fun ResultWrapper<*>.failureOrNull(): Throwable? = (this as? ResultWrapper.Failure)?.failure

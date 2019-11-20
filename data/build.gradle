@@ -43,6 +43,10 @@ dependencies {
 
     implementation Libraries.coroutines
 
+    //Wondering why this is not testImplementation
+    implementation TestLibraries.mockWebServer
+
+
     testImplementation TestLibraries.jUnit
     testImplementation TestLibraries.mockitoCore
 

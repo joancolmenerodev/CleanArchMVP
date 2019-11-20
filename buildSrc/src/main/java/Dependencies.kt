@@ -24,6 +24,8 @@ object TestLibraries {
     const val espressoCore = "androidx.test.espresso:espresso-core:${Versions.espressoCoreVersion}"
     const val coroutinesTest =
         "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutinesCoreVersion}"
+    const val mockWebServer = "com.squareup.okhttp3:mockwebserver:${Versions.okHttpVersion}"
+
 }
 
 object Libraries {
