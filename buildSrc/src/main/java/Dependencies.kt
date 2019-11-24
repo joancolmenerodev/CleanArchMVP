@@ -23,6 +23,9 @@ object TestLibraries {
     const val mockitoKotlin = "com.nhaarman.mockitokotlin2:mockito-kotlin:${Versions.mockitoKotlin2Version}"
     const val testRunner = "androidx.test:runner:${Versions.testRunnerVersion}"
     const val espressoCore = "androidx.test.espresso:espresso-core:${Versions.espressoCoreVersion}"
+    const val espressoContrib = "androidx.test.espresso:espresso-contrib:${Versions.espressoCoreVersion}"
+    const val espressoIntents = "androidx.test.espresso:espresso-intents:${Versions.espressoCoreVersion}"
+    const val okhttp3IdlingResources = "com.jakewharton.espresso:okhttp3-idling-resource:${Versions.okhttp3IdlingResourcesVersion}"
     const val coroutinesTest =
         "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutinesCoreVersion}"
     const val mockWebServer = "com.squareup.okhttp3:mockwebserver:${Versions.okHttpVersion}"
@@ -87,6 +90,7 @@ object Versions {
     const val mockitoCoreVersion = "2.22.0"
     const val mockitoInlineVersion = "2.22.0"
     const val mockitoKotlin2Version = "2.2.0"
+    const val okhttp3IdlingResourcesVersion = "1.0.0"
 }
 
 

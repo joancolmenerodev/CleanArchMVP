@@ -1,4 +1,4 @@
-package com.joancolmenerodev.base.networking
+package com.joancolmenerodev.cleanarch.base.networking
 
 import okhttp3.Interceptor
 import okhttp3.Response

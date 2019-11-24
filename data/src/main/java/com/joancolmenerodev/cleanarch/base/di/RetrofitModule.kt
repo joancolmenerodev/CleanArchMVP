@@ -1,6 +1,6 @@
-package com.joancolmenerodev.base.di
+package com.joancolmenerodev.cleanarch.base.di
 
-import com.joancolmenerodev.base.networking.HeadersInterceptor
+import com.joancolmenerodev.cleanarch.base.networking.HeadersInterceptor
 import com.joancolmenerodev.data.BuildConfig
 import com.joancolmenerodev.service.CryptoCurrencyService
 import okhttp3.OkHttpClient

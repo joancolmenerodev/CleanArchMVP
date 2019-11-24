@@ -48,6 +48,9 @@ dependencies {
 
     androidTestImplementation TestLibraries.testRunner
     androidTestImplementation TestLibraries.espressoCore
+    androidTestImplementation TestLibraries.espressoContrib
+    androidTestImplementation TestLibraries.espressoIntents
+    androidTestImplementation TestLibraries.okhttp3IdlingResources
 
     implementation project(Modules.data)
     implementation project(Modules.domain)

@@ -1,7 +1,7 @@
 package com.joancolmenerodev.cleanarch
 
 import android.app.Application
-import com.joancolmenerodev.base.di.retrofitModule
+import com.joancolmenerodev.cleanarch.base.di.retrofitModule
 import com.joancolmenerodev.cleanarch.base.di.AppInject
 import org.kodein.di.Kodein
 import org.kodein.di.KodeinAware
