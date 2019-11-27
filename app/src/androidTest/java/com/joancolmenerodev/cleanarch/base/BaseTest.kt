@@ -13,14 +13,22 @@ import okhttp3.OkHttpClient
 import org.junit.After
 import org.junit.Before
 import org.junit.Rule
+import org.kodein.di.Kodein
+import org.kodein.di.KodeinAware
+import org.kodein.di.android.closestKodein
+import org.kodein.di.android.kodein
+import org.kodein.di.generic.instance
+import org.kodein.di.generic.kcontext
 
-abstract class BaseTest<T : Activity> {
+abstract class BaseTest<T : Activity> : KodeinAware {
 
     abstract fun getTestActivity(): IntentsTestRule<T>
-
     val context: Context = InstrumentationRegistry.getInstrumentation().targetContext
 
-    private val resource : IdlingResource = OkHttp3IdlingResource.create("OkHttp", OkHttpClient())
+    override val kodein : Kodein by kodein(context)
+    private val client : OkHttpClient by instance()
+
+    private val resource : IdlingResource = OkHttp3IdlingResource.create("OkHttp", client)
 
     fun at(page: Page) {
         page.at()

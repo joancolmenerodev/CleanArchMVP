@@ -25,7 +25,6 @@ class CoinDetailActivityTest : BaseTest<CoinDetailActivity>() {
     @Test
     @SmallTest
     fun loadDataSuccessfully() {
-        Thread.sleep(5000)
         at(cryptoDetailPage)
 
         cryptoDetailPage.cryptoNameText(CRYPTO_NAME)

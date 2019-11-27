@@ -26,7 +26,6 @@ class CoinListActivityTest : BaseTest<MainActivity>() {
     @Test
     @SmallTest
     fun loadDataSuccessfully(){
-        Thread.sleep(5000)
         at(mainActivityPage)
         mainActivityPage.isRecyclerViewFilled()
         at(cryptoDetailPage)

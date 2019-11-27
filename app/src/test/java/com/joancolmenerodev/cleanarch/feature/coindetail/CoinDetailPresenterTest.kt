@@ -14,7 +14,7 @@ import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Test
 
-class CoinDetailActivityTest {
+class CoinDetailPresenterTest {
 
     private var view: CoinDetailContract.View = mock()
 
